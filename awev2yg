@@ -1,0 +1,35 @@
+_G.Key = "zappy69"
+
+local keys = {
+    "zappy234632",
+    "zappy234633",
+    "zappy234634"
+}
+
+local counter = 1
+local keyCheck
+for i,v in pairs(keys) do
+    if counter == #keys then
+    --not whitelisted!
+    keys = ""
+    game.Players.LocalPlayer:Kick("Not a valid key!")
+    else
+        if v == _G.Key then
+            --Whitelisted!
+            loadstring(game:HttpGet(("https://raw.githubusercontent.com/zappy-L/a24v234v/main/wrv3srv"), true))()
+            keyCheck = _G.Key
+            keys = ""
+        else
+            counter = counter +1
+        end
+    end
+end
+
+while true do
+    if _G.Key == keyCheck then
+        --Not spoofed
+    else
+        game.Players.LocalPlayer:Kick("Wrong key! Reconnect and try again")
+    end
+    wait()
+end
